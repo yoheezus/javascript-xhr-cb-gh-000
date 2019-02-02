@@ -30,7 +30,7 @@ function getCommits(el) {
 
 function showCommits() {
     const commits = JSON.parse(this.responseText)
-    const commitList = `<ul>${commits.map(
+    const commitsList = `<ul>${commits.map(
         commit => "<li><strong>" +
                     commit.commit.author.name +
                     "</strong> - " +
