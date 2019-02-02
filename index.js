@@ -19,3 +19,10 @@ function showRepositories(event, data) {
     ).join("")}</ul>`
     document.getElementById("repositories").innerHTML = repoList
 }
+
+function getCommits(el) {
+    const name = el.dataset.repoList
+    const req = new XMLHttpRequest()
+    req.addEventListener("load", showCommits);
+    req.open("GET", "https://api.github.com/repos/yoheezus/" + name + "/commits")
+}
